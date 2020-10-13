@@ -1,0 +1,23 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:12.2
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+    ports:
+      - 5432:5432
+
+  mysql:
+    image: mysql:5.7
+    environment: 
+      MYSQL_DATABASE: testdb
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    ports:
+      - 6060:8080
